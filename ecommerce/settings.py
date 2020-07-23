@@ -77,17 +77,7 @@ WSGI_APPLICATION = 'ecommerce.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/2.2/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'demo_1',
-        'USER': 'lukaszk',
-        'PASSWORD': 'n0t0gr0my',
-        'HOST': 'database-1.ckviclkwwgpf.ap-northeast-1.rds.amazonaws.com',
-        'PORT': '5432'
 
-    }
-}
 
 
 # Password validation
@@ -136,9 +126,7 @@ STATICFILES_DIRS = [
 MEDIA_URL = '/images/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'static/images')
 
-AWS_ACCESS_KEY_ID = 'AKIARKVLC7KIEMRDD7XF'
-AWS_SECRET_ACCESS_KEY = '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'
-AWS_STORAGE_BUCKET_NAME = 'wall-warket-django-app'
+
 AWS_S3_FILE_OVERWRITE = False
 AWS_DEFAULT_ACL = None
 DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
