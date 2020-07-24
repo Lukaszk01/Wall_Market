@@ -24,7 +24,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'pb)!p9t-4(!(^hj9_fz%8^z=)^xbbm%mqk8ejyy+8^=id^b2$r'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['wall-market-django.herokuapp.com', '127.0.0.1', 'localhost']
 
