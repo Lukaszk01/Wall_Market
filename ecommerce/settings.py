@@ -23,9 +23,9 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'pb)!p9t-4(!(^hj9_fz%8^z=)^xbbm%mqk8ejyy+8^=id^b2$r'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
-ALLOWED_HOSTS = ['wall-market-django.herokuapp.com', '127.0.0.1']
+ALLOWED_HOSTS = ['wall-market-django.herokuapp.com', '127.0.0.1', 'localhost']
 
 
 # Application definition
@@ -80,6 +80,14 @@ WSGI_APPLICATION = 'ecommerce.wsgi.application'
 
 
 
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+    }
+}
+
+
 # Password validation
 # https://docs.djangoproject.com/en/2.2/ref/settings/#auth-password-validators
 
@@ -126,10 +134,14 @@ STATICFILES_DIRS = [
 MEDIA_URL = '/images/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'static/images')
 
+# AWS_ACCESS_KEY_ID = os.environ.get(AWS_ACCESS_KEY_ID)
+# AWS_SECRET_ACCESS_KEY = os.environ.get(AWS_SECRET_ACCESS_KEY)
+# AWS_STORAGE_BUCKET_NAME = os.environ.get(AWS_STORAGE_BUCKET_NAME)
 
-AWS_S3_FILE_OVERWRITE = False
-AWS_DEFAULT_ACL = None
-DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
-STATICFILES_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+
+# AWS_S3_FILE_OVERWRITE = False
+# AWS_DEFAULT_ACL = None
+# DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+# STATICFILES_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
 
 
