@@ -12,6 +12,7 @@
 
   <link rel="icon" type="image/png" href="https://popcanvasplus.com/wp-content/uploads/2018/08/Pop-Art-18-CMYK-1-e1534193469282.jpg">
 
+
   <script type="text/javascript">
     var user = '{{request.user}}'
 
@@ -79,7 +80,13 @@
 
       </ul>
       <div id="login" class="form-inline my-2 my-lg-0">
-        <a href="#"class="btn btn-warning">Login</a>
+      {% if user.is_authenticated%}
+          <a href="{% url 'logout' %}"class="btn btn-warning">Logout</a>
+          <a href="{% url 'profile' %}"class="btn btn-warning">Profile</a>
+      {% else %}
+        <a href="{% url 'register' %}"class="btn btn-warning">Register</a>
+        <a href="{% url 'login' %}"class="btn btn-warning">Login</a>
+      {% endif %}
 
         <a href="{% url 'cart' %}">
           <img  id="cart-icon" src="{% static 'images/6+cart.png' %}">
@@ -103,6 +110,13 @@
 
 
      <div class="container">
+      {% if messages %}
+        {%  for message in messages %}
+          <div className="alert alert-{{ message.tags}}">
+          {{ message }}
+     </div>
+      {% endfor %}
+     {% endif %}
             <br>
             {% block content %}
 
