@@ -12,6 +12,7 @@
 
   <link rel="icon" type="image/png" href="https://popcanvasplus.com/wp-content/uploads/2018/08/Pop-Art-18-CMYK-1-e1534193469282.jpg">
 
+
   <script type="text/javascript">
     var user = '{{request.user}}'
 
@@ -103,6 +104,13 @@
 
 
      <div class="container">
+      {% if messages %}
+        {%  for message in messages %}
+          <div className="alert alert-{{ message.tags}}">
+          {{ message }}
+     </div>
+      {% endfor %}
+     {% endif %}
             <br>
             {% block content %}
 
